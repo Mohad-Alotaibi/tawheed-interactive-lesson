@@ -98,7 +98,17 @@ input,select,textarea{font-size:16px} /* منع التكبير التلقائي 
 .hero .meta div{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:12px;padding:10px 16px;font-size:.92rem;text-align:right;max-width:420px}
 .hero .meta b{display:block;color:#ffe6a6;font-family:var(--f-head)}
 .hero .acts{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-.hero .acts .btn-s{background:#fff}
+.hero .acts .btn-s{
+  background:#fff;
+  color:var(--navy);
+  border-color:#fff;
+}
+
+.hero .acts .btn-s:hover{
+  background:var(--sky);
+  color:var(--navy);
+  border-color:var(--sky);
+}
 
 /* ============================================================
    6) الفهرس التفاعلي
