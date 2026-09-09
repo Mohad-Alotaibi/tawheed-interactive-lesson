@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="المرجع الفني الملزم لإنشاء ومراجعة صفحات HTML التعليمية وفق ثيم البصيرة.">
+<title>دليل إنشاء ومراجعة صفحات HTML لثيم البصيرة</title>
+<style>
+:root{
+  --primary:#126B5A;--dark:#0B584A;--secondary:#16806A;--accent:#D97706;
+  --page:#F4F1E8;--surface:#FFFDF7;--card:#FFFFFF;--text:#17202A;
+  --muted:#43534D;--border:#D9E4DF;--success:#137333;--error:#B3261E;
+  --focus:#FFD166;--code:#F2F6F4;--shadow:0 8px 24px rgba(11,88,74,.10)
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--page);color:var(--text);font-family:Tahoma,"Noto Sans Arabic",Arial,sans-serif;line-height:1.85;font-size:18px}
+a{color:var(--primary);text-underline-offset:4px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+header{background:linear-gradient(135deg,var(--dark),var(--secondary));color:#fff;border-bottom:6px solid var(--accent)}
+.hero{max-width:1180px;margin:auto;padding:42px 22px 34px}
+.kicker{display:inline-block;background:#ffffff22;border:1px solid #ffffff55;border-radius:999px;padding:6px 12px;font-weight:700}
+h1{font-size:clamp(2rem,5vw,3.25rem);line-height:1.35;margin:14px 0 10px}
+.hero p{max-width:850px;font-size:1.08rem;margin:0}.meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}.meta span{background:#fff;color:var(--dark);border-radius:10px;padding:7px 11px;font-weight:700}
+.layout{max-width:1180px;margin:22px auto 60px;padding:0 18px;display:grid;grid-template-columns:280px minmax(0,1fr);gap:22px;align-items:start}
+nav{position:sticky;top:18px;background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:var(--shadow);max-height:calc(100vh - 36px);overflow:auto}
+nav h2{font-size:1.2rem;margin:0 0 10px;color:var(--dark)}nav ol{margin:0;padding-right:24px}nav li{margin:7px 0}nav a{text-decoration:none;font-weight:700}nav a:hover{text-decoration:underline}
+main{min-width:0}.notice{background:#FFF6E5;border-right:6px solid var(--accent);border-radius:14px;padding:18px 20px;margin-bottom:22px}
+section{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:clamp(20px,4vw,32px);margin-bottom:20px;box-shadow:var(--shadow)}
+h2{color:var(--dark);font-size:1.55rem;line-height:1.45;margin:0 0 14px}h3{color:var(--primary);font-size:1.2rem;margin:24px 0 8px}h4{color:var(--dark);font-size:1.05rem;margin:18px 0 6px}
+ul,ol{padding-right:28px}li{margin:6px 0}.rule{background:var(--card);border:1px solid var(--border);border-right:5px solid var(--primary);border-radius:13px;padding:15px 18px;margin:12px 0}.critical{border-right-color:var(--error);background:#FFF8F7}.good{border-right-color:var(--success);background:#F2FAF6}
+code{font-family:Consolas,"Courier New",monospace;background:var(--code);border:1px solid var(--border);border-radius:6px;padding:1px 5px;direction:ltr;unicode-bidi:bidi-override}pre{direction:ltr;text-align:left;overflow:auto;background:#16241F;color:#F5FFF9;border-radius:14px;padding:18px;line-height:1.65}pre code{background:transparent;border:0;padding:0;color:inherit}
+.spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.spec{background:#fff;border:1px solid var(--border);border-radius:13px;padding:15px}.spec strong{display:block;color:var(--dark);margin-bottom:3px}
+.swatches{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}.swatch{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--border);border-radius:12px;padding:10px}.dot{width:34px;height:34px;border-radius:9px;border:1px solid #0002;flex:none}
+.checklist{list-style:none;padding:0}.checklist li{position:relative;padding-right:30px}.checklist li::before{content:"✓";position:absolute;right:0;color:var(--success);font-weight:900}
+.version{width:100%;border-collapse:collapse;background:#fff}.version th,.version td{border:1px solid var(--border);padding:10px;text-align:right}.version th{background:var(--primary);color:#fff}
+footer{background:var(--dark);color:#fff;padding:26px 18px;text-align:center}footer p{margin:4px auto;max-width:900px}
+@media(max-width:900px){.layout{grid-template-columns:1fr}nav{position:static;max-height:none}body{font-size:18px}}
+@media print{header,nav,footer{display:none}.layout{display:block;max-width:none;margin:0;padding:0}section{box-shadow:none;break-inside:avoid;border-color:#bbb}.notice{break-inside:avoid}body{background:#fff;font-size:12pt}}
+</style>
+</head>
+<body>
+<header>
+  <div class="hero">
+    <span class="kicker">مرجع فني للوكيل</span>
+    <h1>دليل إنشاء ومراجعة صفحات HTML لثيم البصيرة</h1>
+    <p>المرجع الفني الملزم لإنشاء صفحات تعليمية عربية متجاوبة ومراجعتها واختبارها، مع المحافظة على سلامة المحتوى الشرعي والتصميم التعليمي.</p>
+    <div class="meta"><span>الإصدار 1.0</span><span>آخر تحديث: 9 سبتمبر 2026</span><span>الحالة: معتمد تجريبيًا</span></div>
+  </div>
+</header>
+<div class="layout">
+<nav aria-label="فهرس الدليل">
+  <h2>محتويات الدليل</h2>
+  <ol>
+    <li><a href="#intro">التعريف والأولوية</a></li>
+    <li><a href="#visual">الثيم البصري</a></li>
+    <li><a href="#interaction">التفاعل والوصول</a></li>
+    <li><a href="#storage">التخزين والمتانة</a></li>
+    <li><a href="#status">مؤشر الحالة</a></li>
+    <li><a href="#offline">العمل دون إنترنت والطباعة</a></li>
+    <li><a href="#testing">الاختبارات وضمان الجودة</a></li>
+    <li><a href="#issues">المشكلات المعروفة</a></li>
+    <li><a href="#management">إدارة الوثيقة</a></li>
+  </ol>
+</nav>
+<main>
+<div class="notice"><strong>قاعدة حاكمة:</strong> هذه الوثيقة مرجع فني لصفحات HTML فقط. لا تستبدل مصدر الدرس أو إرشادات الوكيل، ولا تبيح تعديل آية أو حديث أو حكم شرعي أو إضافة محتوى غير موثق.</div>
+
+<section id="intro">
+<h2>1. التعريف والأولوية</h2>
+<h3>غرض الوثيقة</h3>
+<ul>
+<li>توحيد جودة صفحات HTML التعليمية في ثيم البصيرة.</li>
+<li>منع تكرار الأخطاء التقنية والوصولية والتشغيلية.</li>
+<li>تقديم قوائم فحص واختبار قابلة للتطبيق قبل التسليم.</li>
+<li>الفصل بين الفحص الساكن والمحاكاة والاختبار الفعلي.</li>
+</ul>
+<h3>ترتيب الأولويات عند التعارض</h3>
+<ol>
+<li>مصدر الدرس الذي يقدمه المستخدم.</li>
+<li>ضوابط المحتوى الشرعي في إرشادات الوكيل.</li>
+<li>طلب المستخدم الصريح.</li>
+<li>نواتج التعلم ومتطلبات التصميم التعليمي.</li>
+<li>المواصفات الفنية في هذه الوثيقة.</li>
+<li>الاجتهادات التصميمية العامة.</li>
+</ol>
+<h3>نطاق التطبيق</h3>
+<p>تطبق الوثيقة على صفحات شرح الدروس، والأنشطة التفاعلية، وأوراق العمل الرقمية، والاختبارات الإلكترونية، وصفحات العرض على البروجكتر والتابلت، والحزم التعليمية، ومراجعة ملفات HTML السابقة.</p>
+<h3>تعريف المنتج المكتمل</h3>
+<ul class="checklist">
+<li>ملف HTML مكتمل يجمع HTML وCSS وJavaScript عند طلب ملف مستقل.</li>
+<li>واجهة عربية كاملة من اليمين إلى اليسار.</li>
+<li>مناسبة للحاسب والتابلت والبروجكتر.</li>
+<li>قابلة للاستخدام بالنقر واللمس ولوحة المفاتيح.</li>
+<li>لا تعتمد على موارد خارجية عند اشتراط العمل دون إنترنت.</li>
+<li>خضعت لمراجعة منطقية وتقنية قبل التسليم.</li>
+</ul>
+</section>
+
+<section id="visual">
+<h2>2. الثيم البصري</h2>
+<h3>الهوية</h3>
+<p>ثيم تربوي عربي أخضر دافئ، هادئ وحديث وواضح، يستخدم المساحات البيضاء ويقلل الزخارف ويقدم وضوح القراءة على المؤثرات البصرية.</p>
+<h3>لوحة الألوان</h3>
+<div class="swatches">
+<div class="swatch"><span class="dot" style="background:#126B5A"></span><span><strong>الأخضر الرئيس</strong><code>#126B5A</code></span></div>
+<div class="swatch"><span class="dot" style="background:#0B584A"></span><span><strong>الأخضر الداكن</strong><code>#0B584A</code></span></div>
+<div class="swatch"><span class="dot" style="background:#16806A"></span><span><strong>الأخضر الثانوي</strong><code>#16806A</code></span></div>
+<div class="swatch"><span class="dot" style="background:#D97706"></span><span><strong>البرتقالي المساند</strong><code>#D97706</code></span></div>
+<div class="swatch"><span class="dot" style="background:#F4F1E8"></span><span><strong>خلفية الصفحة</strong><code>#F4F1E8</code></span></div>
+<div class="swatch"><span class="dot" style="background:#FFFDF7"></span><span><strong>خلفية المحتوى</strong><code>#FFFDF7</code></span></div>
+<div class="swatch"><span class="dot" style="background:#FFFFFF"></span><span><strong>خلفية البطاقات</strong><code>#FFFFFF</code></span></div>
+<div class="swatch"><span class="dot" style="background:#17202A"></span><span><strong>النص الرئيس</strong><code>#17202A</code></span></div>
+<div class="swatch"><span class="dot" style="background:#43534D"></span><span><strong>النص المساند</strong><code>#43534D</code></span></div>
+<div class="swatch"><span class="dot" style="background:#137333"></span><span><strong>النجاح</strong><code>#137333</code></span></div>
+<div class="swatch"><span class="dot" style="background:#B3261E"></span><span><strong>الخطأ</strong><code>#B3261E</code></span></div>
+<div class="swatch"><span class="dot" style="background:#FFD166"></span><span><strong>التركيز</strong><code>#FFD166</code></span></div>
+</div>
+<h3>الخطوط</h3>
+<p><code>Tajawal</code> أو <code>Cairo</code>، ثم <code>Tahoma</code> و<code>Noto Sans Arabic</code> و<code>Arial</code> بدائل محلية. يمنع الاعتماد على خط شبكي عند اشتراط العمل دون إنترنت.</p>
+<h3>الأحجام النهائية المحسوبة</h3>
+<div class="spec-grid">
+<div class="spec"><strong>عنوان الصفحة</strong>40–48px للبروجكتر، 32–38px للتابلت</div>
+<div class="spec"><strong>عنوان القسم</strong>32–38px للبروجكتر، 28–32px للتابلت</div>
+<div class="spec"><strong>العنوان الفرعي</strong>26–30px</div>
+<div class="spec"><strong>النص والأسئلة والخيارات</strong>22–24px للبروجكتر، 20–22px للتابلت</div>
+<div class="spec"><strong>الأزرار</strong>19–22px</div>
+<div class="spec"><strong>النص المساند</strong>18px على الأقل</div>
+</div>
+<div class="rule critical"><strong>حد إلزامي:</strong> لا يقل أي نص ظاهر للطلاب عن 18px عند قياس 768×1024. افحص الحجم المحسوب بعد تطبيق <code>rem</code> و<code>em</code> والتوريث ووسائط الاستجابة، ولا تكتف بقيمة <code>body</code>.</div>
+<h3>الأبعاد والتجاوب</h3>
+<ul>
+<li>أقصى عرض للمحتوى: <code>1100px</code>.</li>
+<li>حشوة اللوحة: <code>24–36px</code>، والبطاقة: <code>20px</code>.</li>
+<li>المسافة بين البطاقات: <code>16px</code>.</li>
+<li>نصف قطر الأزرار <code>10px</code>، والبطاقات <code>14px</code>، واللوحات <code>18px</code>.</li>
+<li>الحد الأدنى لمنطقة اللمس: <code>48×48px</code>.</li>
+<li>قياسات الاختبار: 360×800، 768×1024، 1024×768، 1366×768، 1920×1080، وتكبير 200٪.</li>
+</ul>
+</section>
+
+<section id="interaction">
+<h2>3. التفاعل والوصول</h2>
+<h3>الأزرار والتركيز</h3>
+<ul>
+<li>وفر حالات العادي والتحويم والضغط والتركيز والتعطيل.</li>
+<li>استخدم حد تركيز لا يقل عن 3px باللون <code>#FFD166</code>.</li>
+<li>لا تزل <code>outline</code> دون بديل مرئي واضح.</li>
+<li>لا يقل الهدف اللمسي عن 48×48px.</li>
+</ul>
+<h3>لوحة المفاتيح</h3>
+<div class="rule critical">لا تعمل اختصارات انتقال الشاشات بمفاتيح الأسهم عندما يكون التركيز داخل <code>input</code> أو <code>button</code> أو <code>select</code> أو <code>textarea</code> أو <code>a</code> أو <code>[role="button"]</code> أو <code>[contenteditable="true"]</code>.</div>
+<ul>
+<li>اترك الأسهم داخل مجموعات <code>radio</code> لتغيير الاختيار الطبيعي.</li>
+<li>ادعم <code>Tab</code> و<code>Shift+Tab</code> و<code>Enter</code> والمسافة.</li>
+<li>لا تسمح بوصول التركيز إلى عناصر مخفية.</li>
+</ul>
+<h3>إدارة التركيز</h3>
+<ul>
+<li>انقل التركيز إلى عنوان الشاشة الجديدة من نوع <code>h1</code> أو <code>h2</code>.</li>
+<li>استخدم <code>tabindex="-1"</code> مع العناوين غير التفاعلية.</li>
+<li>استخدم <code>focus({preventScroll:true})</code> عند ملاءمته.</li>
+<li>بعد إعادة المحاولة، انقل التركيز إلى أول خيار أو عنوان النشاط.</li>
+</ul>
+<h3>الأسئلة والتغذية الراجعة</h3>
+<ul>
+<li>استخدم <code>fieldset</code> و<code>legend</code> لمجموعات الأسئلة.</li>
+<li>استخدم <code>aria-live</code> للتغذية الراجعة.</li>
+<li>لا تعتمد على اللون وحده للصواب والخطأ.</li>
+<li>حدد أرقام الأسئلة غير المجابة وأبرزها.</li>
+<li>عطل الإجابات بعد التصحيح أو ألغ النتيجة تلقائيًا عند تعديلها.</li>
+<li>اجعل إعادة المحاولة تمسح الإجابة والنتيجة والتغذية الراجعة وتعيد موضع التركيز المناسب.</li>
+</ul>
+<h3>أنشطة التصنيف والسحب</h3>
+<ul>
+<li>وفر بديلًا بالنقر واللمس ولوحة المفاتيح، ولا تعتمد على السحب فقط.</li>
+<li>أظهر العنصر المختار ومنطقة الاستقبال النشطة.</li>
+<li>وفر زر إرجاع العنصر وزر إعادة النشاط.</li>
+<li>امنع التحقق قبل اكتمال التصنيف، وقدم نتيجة عددية وتغذية راجعة موجهة.</li>
+</ul>
+</section>
+
+<section id="storage">
+<h2>4. التخزين والمتانة التشغيلية</h2>
+<div class="rule good"><strong>المبدأ:</strong> التخزين تحسين اختياري لحفظ الحالة، وليس شرطًا لتشغيل الصفحة.</div>
+<h3>طبقة التخزين الآمن</h3>
+<ul>
+<li>لا تجعل الصفحة أو التنقل أو النشاط أو التغذية الراجعة أو الدرجات معتمدة على <code>sessionStorage</code> أو <code>localStorage</code>.</li>
+<li>أنشئ طبقة مركزية للتهيئة والقراءة والكتابة والحذف.</li>
+<li>أحط الوصول إلى <code>window.sessionStorage</code> وجميع عملياته بـ<code>try...catch</code>.</li>
+<li>اختبر الصلاحية بكتابة قيمة مؤقتة وحذفها.</li>
+<li>لا تستخدم <code>localStorage</code> بديلًا مباشرًا عند فشل <code>sessionStorage</code>.</li>
+</ul>
+<h3>الذاكرة البديلة</h3>
+<ul>
+<li>استخدم <code>Map</code> أو كائنًا داخليًا خلال بقاء المستند مفتوحًا.</li>
+<li>استمر في تشغيل التنقل والأنشطة والتغذية الراجعة وإعادة المحاولة وأوضاع العرض عند حظر التخزين.</li>
+<li>يجوز فقد الحالة عند إعادة تحميل الصفحة داخل بيئة معزولة، دون تعطل الوظائف.</li>
+</ul>
+<h3>تنبيه تعذر التخزين</h3>
+<div class="rule">تنبيه: الصفحة تعمل بصورة طبيعية، لكن التقدم لن يُحفظ عند إعادة تحميل الصفحة في بيئة المعاينة الحالية.</div>
+<ul>
+<li>يظهر مرة واحدة فقط، ويستخدم <code>aria-live="polite"</code>.</li>
+<li>لا يعرض تفاصيل تقنية للطالب، ويختفي عند الطباعة.</li>
+</ul>
+<h3>بيئات المعاينة</h3>
+<p>اختبر أو راجع سلوك الصفحة في الملف المحلي وGitHub Pages وSharePoint وداخل <code>iframe</code> أو بيئة <code>sandbox</code> عند ملاءمة الاستخدام. لا تفترض أن نجاح الصفحة محليًا يضمن نجاح التخزين داخل إطار معزول.</p>
+</section>
+
+<section id="status">
+<h2>5. مؤشر الحالة داخل الدرس</h2>
+<h3>الأقسام التي تمت زيارتها</h3>
+<p>تزيد عند فتح القسم، ولا تعني أن الطالب نفذ النشاط أو أتقن المحتوى.</p>
+<h3>تقدم الإنجاز</h3>
+<p>يزيد فقط بعد تحقق شرط تعليمي مثل إكمال النشاط، أو إرسال التقويم، أو تحقيق معيار محدد.</p>
+<ul>
+<li>اعرض العدد الحالي والعدد الكلي والنسبة المئوية.</li>
+<li>استخدم <code>role="progressbar"</code> وخصائص <code>aria-valuemin</code> و<code>aria-valuemax</code> و<code>aria-valuenow</code> و<code>aria-valuetext</code>.</li>
+<li>لا تستخدم مؤشرًا أو تسمية مضللة.</li>
+</ul>
+</section>
+
+<section id="offline">
+<h2>6. العمل دون إنترنت والطباعة</h2>
+<h3>العمل دون إنترنت</h3>
+<ul>
+<li>اجمع HTML وCSS وJavaScript في ملف واحد عند طلب ملف مستقل.</li>
+<li>لا تستخدم مكتبات أو خطوطًا أو صورًا مرتبطة بالشبكة إذا كان العمل دون إنترنت مطلوبًا.</li>
+<li>لا تجعل أي طلب شبكي ضروريًا للتشغيل.</li>
+</ul>
+<h3>الطباعة</h3>
+<ul>
+<li>أخف أدوات العرض والتنقل والأزرار والتنبيهات التقنية.</li>
+<li>أظهر جميع الأقسام بخلفية بيضاء ونص داكن.</li>
+<li>نسق الصفحة لمقاس A4، ومنع تقسيم السؤال أو البطاقة قدر الإمكان.</li>
+<li>ميّز بين معاينة الطباعة والطباعة أو ملف PDF الفعلي.</li>
+</ul>
+</section>
+
+<section id="testing">
+<h2>7. الاختبارات وضمان الجودة</h2>
+<h3>مستويات التحقق</h3>
+<ol>
+<li>الفحص الساكن للشفرة.</li>
+<li>فحص صياغة JavaScript مثل <code>node --check</code>.</li>
+<li>المحاكاة المنطقية أو البرمجية.</li>
+<li>اختبار DOM افتراضي.</li>
+<li>اختبار فعلي داخل متصفح.</li>
+<li>معاينة بشرية على تابلت أو بروجكتر.</li>
+<li>طباعة أو PDF فعلي.</li>
+</ol>
+<div class="rule critical"><strong>قاعدة شفافية:</strong> لا يجوز تسمية مستوى من الفحص بمستوى أعلى منه. فحص <code>node --check</code> يثبت سلامة الصياغة فقط، ولا يثبت عمل DOM أو الأزرار أو التجاوب أو بيئة <code>sandbox</code>.</div>
+<h3>اختبارات التخزين الآمن</h3>
+<ol>
+<li>فحص جميع عمليات التخزين والتأكد من وجود طبقة مركزية.</li>
+<li>محاكاة منع الوصول إلى <code>sessionStorage</code> نفسها والتقاط <code>SecurityError</code>.</li>
+<li>التحقق من استمرار التنقل والنشاط والتغذية الراجعة وإعادة المحاولة والدرجات وأوضاع العرض.</li>
+<li>التحقق من ظهور التنبيه مرة واحدة وعدم استخدام <code>localStorage</code> بديلًا مباشرًا.</li>
+<li>التأكد من عدم ظهور خطأ JavaScript غير معالج.</li>
+</ol>
+<h3>اختبارات لوحة المفاتيح</h3>
+<ol>
+<li>التنقل بـTab وShift+Tab.</li>
+<li>تفعيل الأزرار بـEnter والمسافة.</li>
+<li>تغيير خيارات radio بالأسهم دون انتقال الشاشة.</li>
+<li>انتقال التركيز إلى عنوان الشاشة الجديدة.</li>
+<li>عدم وصول التركيز إلى الشاشة المخفية.</li>
+<li>فحص موضع التركيز بعد إعادة المحاولة وحد التركيز المرئي.</li>
+</ol>
+<h3>اختبارات النشاط والتقويم</h3>
+<ul>
+<li>التحقق بلا إجابة، والإجابة الصحيحة، والإجابة غير الصحيحة، وإعادة المحاولة.</li>
+<li>الأسئلة غير المجابة، والدرجة الكاملة، ودرجة أقل من النجاح، وصحة النسبة.</li>
+<li>تعطيل الإجابات بعد التصحيح وإعادة تفعيلها في المحاولة الجديدة.</li>
+</ul>
+<h3>اختبارات التجاوب</h3>
+<p>اختبر القياسات 360×800 و768×1024 و1024×768 و1366×768 و1920×1080 والتكبير إلى 200٪. افحص <code>scrollWidth</code> مقابل <code>clientWidth</code>، والقص والتراكب والأحجام المحسوبة ووصول المستخدم إلى جميع العناصر.</p>
+<h3>اختبار عدم الانحدار</h3>
+<p>بعد كل تصحيح أعد اختبار الوظيفة المصححة والوظائف المرتبطة بها، والتنقل والدرجات وإعادة المحاولة والثيم وRTL والطباعة والعمل دون إنترنت والتخزين ولوحة المفاتيح ووحدة تحكم JavaScript.</p>
+<h3>قالب تقرير الاختبار</h3>
+<pre><code>رقم الحالة:
+اسم الحالة:
+الهدف:
+نوع الاختبار:
+خطوات التنفيذ:
+النتيجة المتوقعة:
+النتيجة الفعلية:
+الحالة: ناجح / فاشل / متعذر
+الدليل أو الملاحظة:
+التصحيح المنفذ:
+نتيجة إعادة الاختبار:
+القيد المتبقي:</code></pre>
+<h3>ملخص التحقق النهائي</h3>
+<ul>
+<li>ما تم فحصه وما تم اختباره فعليًا.</li>
+<li>ما تم تصحيحه وما أعيد اختباره.</li>
+<li>ما تعذر اختباره والأدوات أو المتصفحات غير المتاحة.</li>
+<li>مقاسات العرض المستخدمة والقيود المتبقية.</li>
+<li>التوصية اللازمة قبل الاستخدام الصفي.</li>
+</ul>
+</section>
+
+<section id="issues">
+<h2>8. سجل المشكلات المعروفة</h2>
+<h3>التخزين في sandbox</h3><p>قد يرمي الوصول إلى <code>sessionStorage</code> خطأ أمنيًا داخل إطار معزول. التصحيح هو طبقة تخزين آمنة وذاكرة مؤقتة واستمرار الوظائف الأساسية.</p>
+<h3>تعارض الأسهم مع radio</h3><p>قد ينقل مستمع الأسهم العام الشاشة أثناء تغيير خيار. امنع الاختصار عندما يكون مصدر الحدث عنصرًا تفاعليًا، وأضف حالة اختبار صريحة.</p>
+<h3>صغر النص بسبب التوريث</h3><p>قد تنتج وحدات <code>rem</code> و<code>em</code> حجمًا فعليًا أقل من المعلن. افحص الحجم المحسوب النهائي ولا تسمح بنص ظاهر للطلاب أقل من 18px.</p>
+<h3>الخلط بين الزيارة والإنجاز</h3><p>زيارة القسم لا تعني إتمام النشاط. استخدم التسمية المطابقة لما يقيسه المؤشر.</p>
+<h3>ادعاء اختبار غير منفذ</h3><p>لا تعتبر الفحص الساكن اختبار متصفح، ولا تعتبر وجود CSS اختبار تجاوب. صرّح بالأدوات غير المتاحة والقيود بدقة.</p>
+</section>
+
+<section id="management">
+<h2>9. إدارة الوثيقة</h2>
+<h3>سجل الإصدارات</h3>
+<table class="version">
+<thead><tr><th>الإصدار</th><th>التاريخ</th><th>التعديل</th><th>الحالة</th></tr></thead>
+<tbody><tr><td>1.0</td><td>9 سبتمبر 2026</td><td>إنشاء المرجع الفني وتضمين التخزين والوصول والاختبارات والمشكلات المعروفة.</td><td>معتمد تجريبيًا</td></tr></tbody>
+</table>
+<h3>قاعدة التحديث</h3>
+<ol>
+<li>التحقق من المشكلة وتحديد سببها الجذري.</li>
+<li>وضع قاعدة وقائية عامة وحالة اختبار.</li>
+<li>تحديث رقم الإصدار وسجل التعديلات.</li>
+<li>إعادة اختبار نموذج مرجعي.</li>
+</ol>
+<div class="rule good"><strong>خاتمة ملزمة للوكيل:</strong> عند إنشاء صفحة HTML أو مراجعتها، طبّق هذه الوثيقة مرجعًا فنيًا ملزمًا وصحح المخالفات الممكنة داخل الملف قبل التسليم. إذا تعذر اختبار معين، صرّح بذلك ولا تدّع تنفيذه. لا يجوز أن تؤدي المتطلبات الفنية إلى تغيير محتوى المصدر أو النصوص والأحكام الشرعية.</div>
+</section>
+</main>
+</div>
+<footer><p>دليل إنشاء ومراجعة صفحات HTML لثيم البصيرة، الإصدار 1.0</p><p>وثيقة فنية عامة، لا تتضمن بيانات طلاب أو محتوى داخليًا خاصًا.</p></footer>
+</body>
+</html>
